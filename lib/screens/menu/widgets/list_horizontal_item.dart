@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget menuItem(BuildContext context, String title, String route) {
+Widget listHorizontalItem(BuildContext context, String title, String route) {
   return GestureDetector(
     onTap: () {
       Navigator.pushNamed(context, route);

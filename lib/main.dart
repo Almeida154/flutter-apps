@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'screens/menu/view.dart';
+import 'providers/theme.dart';
 import 'routes.dart';
-import 'menu.dart';
 import 'theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,9 +22,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Apps(),
+      home: const Scaffold(body: SafeArea(child: Apps())),
       routes: Routes.getRoutes(),
-      theme: AppTheme.getDarkTheme(context),
+      theme: Provider.of<ThemeProvider>(context).isDarkMode
+          ? AppTheme.getDarkTheme(context)
+          : AppTheme.getLightTheme(context),
     );
   }
 }

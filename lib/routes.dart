@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/app_01.dart';
-import 'screens/app_02.dart';
+import 'screens/app_01/view.dart';
+import 'screens/app_02/view.dart';
 
 class Routes {
   static Map<String, WidgetBuilder> getRoutes() {
