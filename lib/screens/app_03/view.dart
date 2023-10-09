@@ -18,7 +18,7 @@ class App03UI extends State<App03> {
     if (_firstNumberController.text.isEmpty ||
         _secondNumberController.text.isEmpty) {
       setState(() {
-        _result = 'Please, fill both fields.';
+        _result = 'Please, fill both fields';
       });
       return;
     }
