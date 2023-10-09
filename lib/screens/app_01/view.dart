@@ -13,7 +13,23 @@ class App01 extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Column(
-        children: [header(context, title)],
+        children: [
+          header(context, title),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: Theme.of(context).colorScheme.surface),
+            padding: const EdgeInsets.all(16),
+            child: Text(
+              "Name: David Almeida Santos \nFormation: FIAP \nExperience: Jr Dev",
+              style: TextStyle(
+                height: 1.2,
+                fontSize: 16,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+            ),
+          )
+        ],
       )),
     );
   }
