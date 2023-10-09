@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../../widgets/header.dart';
 import '../../widgets/input.dart';
@@ -46,6 +48,20 @@ class App04UI extends State<App04> {
           child: Column(
         children: [
           header(context, title),
+          Container(
+              margin: const EdgeInsets.symmetric(horizontal: 24),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: SizedBox(
+                  height: 180,
+                  width: double.infinity,
+                  child: Image.network(
+                    'https://s2.glbimg.com/fLLjtcmosminFpbQVwWjJ6qEdNU=/512x320/smart/e.glbimg.com/og/ed/f/original/2015/09/10/ads_macgyver1.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              )),
+          const SizedBox(height: 40),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child:
