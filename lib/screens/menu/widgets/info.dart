@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 Widget info(BuildContext context) {
   return Container(
+    margin: const EdgeInsets.symmetric(horizontal: 24),
     decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16)),
@@ -35,7 +36,7 @@ Widget info(BuildContext context) {
               topRight: Radius.circular(16),
               bottomRight: Radius.circular(16),
             ),
-            child: Container(
+            child: SizedBox(
               height: 216,
               child: Image.network(
                 'https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zmx1dHRlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80',
@@ -52,7 +53,7 @@ Widget info(BuildContext context) {
 Widget collegeTag(BuildContext context) {
   return Container(
     decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary.withOpacity(.2),
+        color: Theme.of(context).colorScheme.primary.withOpacity(.1),
         borderRadius: BorderRadius.circular(24)),
     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
     child: Text('FIAP',

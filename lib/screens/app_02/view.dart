@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import '../../widgets/header.dart';
 
 class App02 extends StatelessWidget {
-  const App02({super.key});
+  const App02({super.key, Key? app01});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Conteúdo do Exercício 2',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+    Map<String, dynamic>? args =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    String title = args?['title'] ?? 'Default Title';
+
+    return Scaffold(
+      body: SafeArea(
+          child: Column(
+        children: [header(context, title)],
+      )),
     );
   }
 }
