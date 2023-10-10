@@ -6,10 +6,10 @@ class ProfileExperience extends StatefulWidget {
   const ProfileExperience({super.key});
 
   @override
-  ProfileFormationUI createState() => ProfileFormationUI();
+  ProfileExperienceUI createState() => ProfileExperienceUI();
 }
 
-class ProfileFormationUI extends State<ProfileExperience> {
+class ProfileExperienceUI extends State<ProfileExperience> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

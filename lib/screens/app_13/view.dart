@@ -1,20 +1,56 @@
 import 'package:flutter/material.dart';
+
+import '../profile_personal/view.dart';
+import '../profile_formation/view.dart';
+import '../profile_experience/view.dart';
+
 import '../../widgets/header.dart';
 
-class App13 extends StatelessWidget {
-  const App13({super.key, Key? app01});
+class App13 extends StatefulWidget {
+  const App13({Key? key}) : super(key: key);
+
+  @override
+  App13State createState() => App13State();
+}
+
+class App13State extends State<App13> {
+  int _currentIndex = 0;
+
+  final List<Widget> _pages = [
+    const ProfilePersonal(),
+    const ProfileFormation(),
+    const ProfileExperience(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    Map<String, dynamic>? args =
-        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    String title = args?['title'] ?? 'Default Title';
-
     return Scaffold(
-      body: SafeArea(
-          child: Column(
-        children: [header(context, title)],
-      )),
+      body: SafeArea(child: _pages[_currentIndex]),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        elevation: 0,
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        selectedItemColor: Theme.of(context).colorScheme.primary,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Personal',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'Formation',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.work),
+            label: 'Experience',
+          ),
+        ],
+      ),
     );
   }
 }
