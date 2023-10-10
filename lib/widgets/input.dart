@@ -7,7 +7,7 @@ class Input extends StatelessWidget {
   final TextInputType keyboardType;
 
   const Input({
-    Key? key,
+    super.key,
     required this.controller,
     required this.labelText,
     required this.hintText,
