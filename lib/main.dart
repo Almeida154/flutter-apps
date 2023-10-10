@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const Scaffold(body: SafeArea(child: Apps())),
       routes: Routes.getRoutes(),
       theme: Provider.of<ThemeProvider>(context).isDarkMode

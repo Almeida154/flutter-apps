@@ -85,7 +85,7 @@ class App09UI extends State<App09> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _convertCurrency,
-              child: Text('Converter'),
+              child: const Text('Convert'),
             ),
           ]),
         ),
