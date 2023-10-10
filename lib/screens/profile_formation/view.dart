@@ -25,14 +25,53 @@ class ProfileFormationUI extends State<ProfileFormation> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 color: Theme.of(context).colorScheme.surface),
-            child: Text(
-              'Formation',
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.5,
-                color: Theme.of(context).colorScheme.onSurface,
+            child: Column(children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'ETEC de Guaianazes | DS',
+                    style: TextStyle(
+                      fontSize: 16,
+                      height: 1.5,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
+                  Text(
+                    '2019 - 2021',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      height: 1.5,
+                      color: Theme.of(context).colorScheme.onBackground,
+                    ),
+                  ),
+                ],
               ),
-            ),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'FIAP | Internet Systems',
+                    style: TextStyle(
+                      fontSize: 16,
+                      height: 1.5,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
+                  Text(
+                    '2022 - 2023/24',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      height: 1.5,
+                      color: Theme.of(context).colorScheme.onBackground,
+                    ),
+                  ),
+                ],
+              ),
+            ]),
           ),
         ),
       ],
