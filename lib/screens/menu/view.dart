@@ -3,6 +3,7 @@ import 'package:flutter_apps/screens/menu/widgets/apps_carousel.dart';
 import 'widgets/header.dart';
 import 'widgets/info.dart';
 import 'widgets/apps_list.dart';
+import 'widgets/apps_list2.dart';
 
 class Apps extends StatelessWidget {
   const Apps({super.key, Key? apps});
@@ -25,6 +26,8 @@ class Apps extends StatelessWidget {
                 appsCarousel(context),
                 const SizedBox(height: 16),
                 appsList(context),
+                const SizedBox(height: 16),
+                appsList2(context),
               ],
             ),
           ),

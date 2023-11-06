@@ -5,7 +5,7 @@ Widget appsCarousel(BuildContext context) {
     Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Text(
-          'Checkpoint #1',
+          'Checkpoint #4',
           style: TextStyle(
             fontWeight: FontWeight.w900,
             color: Theme.of(context).colorScheme.onBackground,

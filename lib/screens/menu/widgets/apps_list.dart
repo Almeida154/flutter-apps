@@ -5,7 +5,7 @@ Widget appsList(BuildContext context) {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(
-          'Checkpoint #2',
+          'Checkpoint #5',
           style: TextStyle(
             fontWeight: FontWeight.w900,
             color: Theme.of(context).colorScheme.onBackground,
@@ -15,7 +15,7 @@ Widget appsList(BuildContext context) {
         const SizedBox(height: 16),
         item(context, '7', 'Ads for selling products', '/app07'),
         item(context, '8', 'IT job openings', '/app08'),
-        item(context, '9', 'Currency Converter - Real, Dollar and Euro',
+        item(context, '9', 'Currency converter - Real, Dollar and Euro',
             '/app09'),
         item(context, '10', 'Bank account opening form', '/app10'),
         item(context, '11', 'Two screens bank account opening form with',
