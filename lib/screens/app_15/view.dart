@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
+
 import '../../widgets/header.dart';
+import '../../providers/theme.dart';
 
 class App15 extends StatefulWidget {
   const App15({Key? key}) : super(key: key);
@@ -16,7 +19,6 @@ class App15UI extends State<App15> {
 
   _loadPreferences() async {
     final preferences = await SharedPreferences.getInstance();
-    print(preferences);
     setState(() {
       _isDay = preferences.getBool('isDay') ?? true;
       _isSmall = preferences.getBool('isSmall') ?? false;
@@ -45,6 +47,18 @@ class App15UI extends State<App15> {
     });
   }
 
+  Color _getBackgroundColor() {
+    if (Provider.of<ThemeProvider>(context).isDarkMode) {
+      return _isDay
+          ? Theme.of(context).colorScheme.onPrimary
+          : Theme.of(context).colorScheme.surface;
+    }
+
+    return _isDay
+        ? Theme.of(context).colorScheme.surface
+        : Theme.of(context).colorScheme.onBackground;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -69,7 +83,7 @@ class App15UI extends State<App15> {
               children: <Widget>[
                 Text('Day',
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.onPrimary)),
+                        color: Theme.of(context).colorScheme.onBackground)),
                 const SizedBox(width: 8),
                 Switch(
                   value: _isDay,
@@ -83,7 +97,7 @@ class App15UI extends State<App15> {
               children: <Widget>[
                 Text('Small',
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.onPrimary)),
+                        color: Theme.of(context).colorScheme.onBackground)),
                 const SizedBox(width: 8),
                 Switch(
                   value: _isSmall,
@@ -99,9 +113,7 @@ class App15UI extends State<App15> {
           margin: const EdgeInsets.symmetric(horizontal: 24),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              color: _isDay
-                  ? Theme.of(context).colorScheme.onPrimary
-                  : Theme.of(context).colorScheme.surface),
+              color: _getBackgroundColor()),
           child: Text(
             'Revenge is never as good as it is expected to be. It poisons and kills your soul.',
             style: TextStyle(
