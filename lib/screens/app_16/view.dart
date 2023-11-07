@@ -5,7 +5,7 @@ import '../../widgets/header.dart';
 import '../../widgets/input.dart';
 
 import '../../models/task.dart';
-import '../../helpers/tasks.dart';
+import '../../helpers/task_helper.dart';
 
 class App16 extends StatefulWidget {
   const App16({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class App16 extends StatefulWidget {
 
 class App16UI extends State<App16> {
   final TextEditingController _titleController = TextEditingController();
-  late TasksHelper _db;
+  late TaskHelper _db;
   List<Task> _tasks = List<Task>.empty(growable: true);
 
   _getTasks() async {
@@ -106,7 +106,7 @@ class App16UI extends State<App16> {
   @override
   void initState() {
     super.initState();
-    _db = TasksHelper();
+    _db = TaskHelper();
     _getTasks();
   }
 
