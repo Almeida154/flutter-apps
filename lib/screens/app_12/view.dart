@@ -4,8 +4,6 @@ import '../profile_personal/view.dart';
 import '../profile_formation/view.dart';
 import '../profile_experience/view.dart';
 
-import '../../widgets/header.dart';
-
 class App12 extends StatefulWidget {
   const App12({super.key});
 

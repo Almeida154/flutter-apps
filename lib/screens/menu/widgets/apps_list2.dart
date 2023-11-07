@@ -72,7 +72,7 @@ Widget item(BuildContext context, String number, String title, String route) {
             ),
           ),
           const SizedBox(width: 8),
-          Text('VER',
+          Text('SEE MORE',
               style: TextStyle(
                   fontWeight: FontWeight.w900,
                   color: Theme.of(context).colorScheme.primary,
