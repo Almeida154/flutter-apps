@@ -118,24 +118,22 @@ class App16UI extends State<App16> {
 
     return Scaffold(
       body: SafeArea(
-          child: Column(children: [
-        header(context, title),
-        Expanded(
-            child: ListView.builder(
-                itemCount: _tasks.length,
-                itemBuilder: (context, index) {
-                  final task = _tasks[index];
+        child: ListView.builder(
+          itemCount: _tasks.length + 1, // +1 para incluir o cabeçalho
+          itemBuilder: (context, index) {
+            if (index == 0) return header(context, title);
 
-                  return item(
-                      context, task, _deleteTask, _showSaveOrUpdateModal);
-                }))
-      ])),
+            final task = _tasks[index - 1];
+            return item(context, task, _deleteTask, _showSaveOrUpdateModal);
+          },
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
           elevation: 0,
           onPressed: () {
             _showSaveOrUpdateModal();
-          }),
+          },
+          child: const Icon(Icons.add)),
     );
   }
 }
