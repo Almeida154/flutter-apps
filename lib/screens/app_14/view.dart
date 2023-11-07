@@ -1,26 +1,36 @@
 import 'package:flutter/material.dart';
-import '../../widgets/header.dart';
 
-class App14 extends StatefulWidget {
-  const App14({super.key});
+import '../profile_personal/view.dart';
+import '../profile_formation/view.dart';
+import '../profile_experience/view.dart';
 
-  @override
-  App14UI createState() => App14UI();
-}
+class App14 extends StatelessWidget {
+  const App14({Key? key}) : super(key: key);
 
-class App14UI extends State<App14> {
   @override
   Widget build(BuildContext context) {
-    Map<String, dynamic>? args =
-        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    String title = args?['title'] ?? 'Default Title';
-
-    return Scaffold(
-      body: SafeArea(
-          child: Column(children: [
-        header(context, title),
-        Container(),
-      ])),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          toolbarHeight: 0,
+          bottom: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.person), text: 'Personal'),
+              Tab(icon: Icon(Icons.school), text: 'Formation'),
+              Tab(icon: Icon(Icons.work), text: 'Experience'),
+            ],
+          ),
+        ),
+        body: const TabBarView(
+          children: [
+            ProfilePersonal(),
+            ProfileFormation(),
+            ProfileExperience(),
+          ],
+        ),
+      ),
     );
   }
 }

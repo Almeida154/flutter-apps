@@ -87,7 +87,7 @@ class App19UI extends State<App19> {
                     controller: _usernameController,
                     labelText: 'Username',
                     hintText: 'What is the username?',
-                    keyboardType: TextInputType.number),
+                    keyboardType: TextInputType.text),
               ),
               const SizedBox(width: 16),
               SizedBox(
